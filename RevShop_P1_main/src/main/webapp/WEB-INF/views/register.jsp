@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/register.css">
 </head>
 <body>
-    <div class="wrapper p-3 ">
+	<div class="m-5">
+    <div class="wrapper">
         <form action="/saveUser" enctype="multipart/form-data" method="post" onsubmit="return validateForm();">
             <h2>Register</h2>
 
@@ -30,11 +31,11 @@
             <!-- Full Name & Mobile Number Side by Side -->
             <div class="input-group">
                 <div class="input-field">
-                    <input id="name" placeholder="Enter your Full Name" type="text" name="name" required>
+                    <input id="name" placeholder="Full Name" type="text" name="name" required>
                     <label for="name"></label>
                 </div>
                 <div class="input-field">
-                    <input id="mobileNumber" placeholder="Enter your Mobile Number" type="number" name="mobileNumber" required>
+                    <input id="mobileNumber" placeholder="Mobile Number" type="number" name="mobileNumber" required>
                     <label for="mobileNumber"></label>
                 </div>
             </div>
@@ -42,11 +43,11 @@
             <!-- Email & Address Side by Side -->
             <div class="input-group">
                 <div class="input-field">
-                    <input id="email" placeholder="Enter your Email" type="email" name="email" required>
+                    <input id="email" placeholder="Email" type="email" name="email" required>
                     <label for="email"></label>
                 </div>
                 <div class="input-field">
-                    <input id="address" placeholder="Enter your Address" type="text" name="address" required>
+                    <input id="address" placeholder="Address" type="text" name="address" required>
                     <label for="address"></label>
                 </div>
             </div>
@@ -54,29 +55,29 @@
             <!-- City & State Side by Side -->
             <div class="input-group">
                 <div class="input-field">
-                    <input id="city" placeholder="Enter your City" type="text" name="city" required>
+                    <input id="city" placeholder="City" type="text" name="city" required>
                     <label for="city"></label>
                 </div>
                 <div class="input-field">
-                    <input id="state" placeholder="Enter your State" type="text" name="state" required>
+                    <input id="state" placeholder="State" type="text" name="state" required>
                     <label for="state"></label>
                 </div>
             </div>
 
             <!-- Pincode -->
             <div class="input-field">
-                <input id="pincode" placeholder="Enter your Pincode" type="number" name="pincode" required>
+                <input id="pincode" placeholder="Pincode" type="number" name="pincode" required>
                 <label for="pincode"></label>
             </div>
 
             <!-- Password & Confirm Password Side by Side -->
             <div class="input-group">
                 <div class="input-field">
-                    <input id="password" placeholder="Enter your Password" type="password" name="password" required>
+                    <input id="password" placeholder="Password" type="password" name="password" required>
                     <label for="password"></label>
                 </div>
                 <div class="input-field">
-                    <input id="confirmpassword" placeholder="Confirm your Password" type="password" name="confirmpassword" required>
+                    <input id="confirmpassword" placeholder="Confirm Password" type="password" name="confirmpassword" required>
                     <label for="confirmpassword"></label>
                 </div>
             </div>
@@ -101,10 +102,11 @@
 
             <!-- Login Link -->
             <div class="register">
-                <p>Already have an account? <a href="/signin">Login</a></p>
+                <p style="color:white;">Already have an account? <a href="/signin">Login</a></p>
             </div>
         </form>
     </div>
+	</div>
 
     <script>
         // Hide success message after 2 seconds

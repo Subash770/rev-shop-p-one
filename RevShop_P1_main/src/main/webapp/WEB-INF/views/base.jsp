@@ -16,7 +16,8 @@
 
         /* Navbar styles */
         .navbar {
-            background-color: rgb(245, 147, 66);
+			background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent white */
+			            backdrop-filter: blur(1px); /* Blur effect */
         }
         .navbar-nav .nav-link {
             color: white !important; /* White text color */
@@ -24,7 +25,7 @@
         }
         .navbar-nav .nav-link.active,
         .navbar-nav .nav-link:hover {
-            color: rgb(64 64 64);!important; /* Lighter gray for hover/active state */
+            color: #f8b50;!important; /* Lighter gray for hover/active state */
         }
         .navbar .nav-link.btn {
             font-weight: bold; /* Make button text bold */
@@ -74,9 +75,10 @@
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
-            <div class="navbar-brand">
-                <span>REVSHOP<span>
-            </div>
+			<div class="navbar-brand">
+			    <span><img src="../css/img/rev-logo (2).png" alt="Logo" style="height: 50px; width: auto; vertical-align: middle;border-radius:5px;background-color:transparent;"> </span>
+			</div>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -112,11 +114,11 @@
                     <c:choose>
                         <c:when test="${empty user}">
                             <li class="nav-item">
-                                <a class=" btn btn-secondary me-2" href="/signin">LOGIN</a>
+                                <a class=" btn btn-light me-2" href="/signin">LOGIN</a>
                             </li>
-                            <li class="nav-item">
+                           <!-- <li class="nav-item">
                                 <a class=" btn btn-secondary me-2" href="/register">REGISTER</a>
-                            </li>
+                            </li>-->
                         </c:when>
                         <c:otherwise>
                             <c:if test="${user.role == 'ROLE_USER'}">
