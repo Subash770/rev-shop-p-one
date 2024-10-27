@@ -27,18 +27,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.revature.config.AppConfig;
-import com.revature.model.Category;
-import com.revature.model.Product;
-import com.revature.model.ProductOrder;
-import com.revature.model.UserDtls;
-import com.revature.service.CartService;
-import com.revature.service.CategoryService;
-import com.revature.service.OrderService;
-import com.revature.service.ProductService;
-import com.revature.service.UserService;
-import com.revature.util.MailHelper;
-import com.revature.util.OrderStatus;
+import com.revature.config.*;
+import com.revature.model.*;
+import com.revature.service.*;
+import com.revature.util.*;
 
 import jakarta.servlet.http.HttpSession;
 

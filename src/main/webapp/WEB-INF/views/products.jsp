@@ -179,8 +179,11 @@
                                 <th scope="col">Sl No</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Title</th>
+                                <th scope="col">Type</th>
                                 <th scope="col">Category</th>
+                                <th scope="col">Sub Category</th>
                                 <th scope="col">Price</th>
+                                <th scope="col">Size</th>
                                 <th scope="col">Discount</th>
                                 <th scope="col">Discount Price</th>
                                 <th scope="col">Status</th>
@@ -194,8 +197,12 @@
                                     <th scope="row"><c:out value="${c.index + 1}"/></th>
                                     <td><img src="${pageContext.request.contextPath}/img/product_img/${p.image}" width="70px" height="70px"></td>
                                     <td><c:out value="${p.title}"/></td>
+                                    <td><c:out value="${p.type}"/></td>
+
                                     <td><c:out value="${p.category}"/></td>
+                                    <td><c:out value="${p.subCategory}"/></td>
                                     <td><c:out value="${p.price}"/></td>
+                                    <td><c:out value="${p.size}"/></td>
                                     <td><c:out value="${p.discount}"/></td>
                                     <td><c:out value="${p.discountPrice}"/></td>
                                     <td><c:out value="${p.isActive}"/></td>

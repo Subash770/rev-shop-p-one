@@ -13,11 +13,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.revature.dao.ProductDAO;
 import com.revature.model.Product;
+import com.revature.repository.*;
 import com.revature.service.ProductService;
 
 
@@ -44,15 +46,25 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+	@Transactional
 	public Boolean deleteProduct(Integer id) {
+		// First, check if the product exists
 		Product product = productRepository.findById(id).orElse(null);
 
-		if (!ObjectUtils.isEmpty(product)) {
+		if (product != null) {
+			// Delete from cart
+			productRepository.deleteFromCartByProductId(id); // Make sure this method exists in your CartRepository
+
+			// Delete from wishlist
+			productRepository.deleteFromWishlistByProductId(id); // Make sure this method exists in your WishlistRepository
+
+			// Finally, delete the product itself
 			productRepository.delete(product);
 			return true;
 		}
 		return false;
 	}
+
 
 	@Override
 	public Product getProductById(Integer id) {

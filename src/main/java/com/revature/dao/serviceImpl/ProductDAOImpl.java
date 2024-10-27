@@ -3,6 +3,9 @@ package com.revature.dao.serviceImpl;
 import java.util.List;
 import java.util.Optional;
 
+import com.revature.repository.CartRepository;
+import com.revature.repository.WishlistRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +24,13 @@ import jakarta.transaction.Transactional;
 @Transactional
 public class ProductDAOImpl implements ProductDAO {
 
+    private final CartRepository cartRepository; // Cart repository
+    private final WishlistRepository wishlistRepository; // Wishlist repository
+
+    public ProductDAOImpl(CartRepository cartRepository, WishlistRepository wishlistRepository) {
+        this.cartRepository = cartRepository;
+        this.wishlistRepository = wishlistRepository;
+    }
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -164,6 +174,16 @@ public class ProductDAOImpl implements ProductDAO {
         } else {
             entityManager.remove(entityManager.merge(product));
         }
+    }
+
+    @Override
+    public void deleteFromCartByProductId(Integer productId) {
+        cartRepository.deleteByProductId(productId);
+    }
+
+    @Override
+    public void deleteFromWishlistByProductId(Integer productId) {
+        wishlistRepository.deleteByProductId(productId);
     }
 
 }

@@ -5,132 +5,15 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Add Product</title>
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS and FontAwesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Custom CSS -->
     <style>
-        /* Global Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-            background-size: cover;
-            color: #f8f9fa;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1;
-            margin-top: -89px;
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding-top: 5rem;
-            padding-bottom: 2rem;
-        }
-
-        .card {
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 700px;
-            margin-left: -90px;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .card-header {
-            background-color: #8a8583;
-            color: white;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 1rem;
-            border-radius: 15px 15px 0 0;
-            text-transform: uppercase;
-        }
-
-        .card-body {
-            padding: 2rem;
-        }
-
-        .form-label {
-            color: #f8f9fa;
-             
-        }
-
-        input, textarea, select {
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 1px solid #ccc;
-            color: #333;
-            transition: all 0.3s ease;
-        }
-
-        input:hover, textarea:hover, select:hover {
-            border-color: #6c63ff;
-            box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
-        }
-
-        input:focus, textarea:focus, select:focus {
-            border-color: #6c63ff;
-            box-shadow: none;
-        }
-
-        .btn-primary {
-            background-color: #8a8583;
-            border: none;
-            padding: 0.75rem;
-            font-size: 1rem;
-            font-weight: bold;
-            width: 100%;
-            border-radius: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #574bfc;
-            transform: translateY(-5px);
-        }
-
-        .text-success, .text-danger {
-            font-weight: bold;
-        }
-        .form-check-label{
-          font-size: 1.5rem;
-          color: black;
-        
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-        }
+        /* Your existing CSS styles */
     </style>
 </head>
 <body>
-    <!-- Dark Overlay -->
     <div class="overlay"></div>
-
-    <!-- Add Product Form -->
     <section>
         <div class="container p-5 mt-3">
             <div class="row">
@@ -139,18 +22,14 @@
                         <div class="card-header">
                             Add Product
                         </div>
-
-                        <!-- Success/Error Messages -->
                         <div class="card-body">
-                            <!-- Success Message -->
+                            <!-- Success/Error Messages -->
                             <c:if test="${not empty sessionScope.succMsg}">
                                 <p class="text-success fw-bold" id="success-alert">${sessionScope.succMsg}</p>
                                 <%
                                     session.removeAttribute("succMsg");
                                 %>
                             </c:if>
-
-                            <!-- Error Message -->
                             <c:if test="${not empty sessionScope.errorMsg}">
                                 <p class="text-danger fw-bold" id="error-alert">${sessionScope.errorMsg}</p>
                                 <%
@@ -160,16 +39,17 @@
 
                             <!-- Form -->
                             <form action="${pageContext.request.contextPath}/admin/saveProduct" method="post" enctype="multipart/form-data">
+                                <!-- Title and Description -->
                                 <div class="mb-3">
                                     <label class="form-label">Enter Title</label>
                                     <input type="text" name="title" class="form-control" required>
                                 </div>
-
                                 <div class="mb-3">
                                     <label class="form-label">Enter Description</label>
                                     <textarea rows="3" class="form-control" name="description" required></textarea>
                                 </div>
 
+                                <!-- Category -->
                                 <div class="mb-3">
                                     <label class="form-label">Category</label>
                                     <select class="form-select" name="category" required>
@@ -180,11 +60,44 @@
                                     </select>
                                 </div>
 
+                                <!-- New Fields: Type, SubCategory, Size -->
+                                <div class="mb-3">
+                                    <label class="form-label">Type</label>
+                                    <select class="form-select" name="type" required>
+                                        <option value="">-- Select --</option>
+                                        <option value="Men">Men</option>
+                                        <option value="Women">Women</option>
+                                        <option value="Kids">Kids</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">SubCategory</label>
+                                    <input type="text" name="subCategory" class="form-control" placeholder="E.g., Kurti, Shirts, etc." required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Size</label>
+                                    <input type="text" name="size" class="form-control" placeholder="Specify size options" required>
+                                </div>
+
+                                <!-- Price, Stock, and Image -->
                                 <div class="mb-3">
                                     <label class="form-label">Enter Price</label>
                                     <input type="number" name="price" class="form-control" required>
                                 </div>
+                                <div class="row">
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Enter Stock</label>
+                                        <input type="number" name="stock" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Upload Image</label>
+                                        <input type="file" name="file" class="form-control">
+                                    </div>
+                                </div>
 
+                                <!-- Status -->
                                 <div class="mb-3">
                                     <label class="form-label">Status</label>
                                     <div class="form-check form-check-inline">
@@ -194,18 +107,6 @@
                                     <div class="form-check form-check-inline" style="margin-left: 20px;">
                                         <input class="form-check-input" type="radio" name="isActive" value="false" id="inactive">
                                         <label class="form-check-label" for="inactive">Inactive</label>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Enter Stock</label>
-                                        <input type="number" name="stock" class="form-control" required>
-                                    </div>
-
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Upload Image</label>
-                                        <input type="file" name="file" class="form-control">
                                     </div>
                                 </div>
 

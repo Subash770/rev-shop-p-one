@@ -35,200 +35,131 @@ public class Product {
 	private String image;
 
 	private int discount;
-	
+
 	private Double discountPrice;
-	
+
 	private Boolean isActive;
 
-	
-	
-	public Product(Integer id) {
-	    this.id = id;
-	}
+	@Column(length = 50) // Type for product: men, women, kids
+	private String type;
 
+	@Column(length = 100) // Sub-category for product: kurti, shirts, etc.
+	private String subCategory;
+
+	@Column(length = 20) // Size for product: S, M, L, XL or electronic sizes
+	private String size;
+
+	// Constructors
+	public Product(Integer id) {
+		this.id = id;
+	}
 
 	public Product() {
 		super();
 	}
-//	
-//	public Integer getId() {
-//		return id;
-//	}
-//
-//	public void setId(Integer id) {
-//		this.id = id;
-//	}
-//
-//	public String getTitle() {
-//		return title;
-//	}
-//
-//	public void setTitle(String title) {
-//		this.title = title;
-//	}
-//
-//	public String getDescription() {
-//		return description;
-//	}
-//
-//	public void setDescription(String description) {
-//		this.description = description;
-//	}
-//
-//	public String getCategory() {
-//		return category;
-//	}
-//
-//	public void setCategory(String category) {
-//		this.category = category;
-//	}
-//
-//	public Double getPrice() {
-//		return price;
-//	}
-//
-//	public void setPrice(Double price) {
-//		this.price = price;
-//	}
-//
-//	public int getStock() {
-//		return stock;
-//	}
-//
-//	public void setStock(int stock) {
-//		this.stock = stock;
-//	}
-//
-//	public String getImage() {
-//		return image;
-//	}
-//
-//	public void setImage(String image) {
-//		this.image = image;
-//	}
-//
-//	public int getDiscount() {
-//		return discount;
-//	}
-//
-//	public void setDiscount(int discount) {
-//		this.discount = discount;
-//	}
-//
-//	public Double getDiscountPrice() {
-//		return discountPrice;
-//	}
-//
-//	public void setDiscountPrice(Double discountPrice) {
-//		this.discountPrice = discountPrice;
-//	}
-//
-//	public Boolean getIsActive() {
-//		return isActive;
-//	}
-//
-//	public void setIsActive(Boolean isActive) {
-//		this.isActive = isActive;
-//	}
 
-
+	// Getters and Setters
 	public Integer getId() {
 		return id;
 	}
-
 
 	public String getTitle() {
 		return title;
 	}
 
-
 	public String getDescription() {
 		return description;
 	}
-
 
 	public String getCategory() {
 		return category;
 	}
 
-
 	public Double getPrice() {
 		return price;
 	}
-
 
 	public int getStock() {
 		return stock;
 	}
 
-
 	public String getImage() {
 		return image;
 	}
-
 
 	public int getDiscount() {
 		return discount;
 	}
 
-
 	public Double getDiscountPrice() {
 		return discountPrice;
 	}
-
 
 	public Boolean getIsActive() {
 		return isActive;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public String getSubCategory() {
+		return subCategory;
+	}
+
+	public String getSize() {
+		return size;
+	}
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-
 	public void setCategory(String category) {
 		this.category = category;
 	}
-
 
 	public void setPrice(Double price) {
 		this.price = price;
 	}
 
-
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-
 
 	public void setImage(String image) {
 		this.image = image;
 	}
 
-
 	public void setDiscount(int discount) {
 		this.discount = discount;
 	}
-
 
 	public void setDiscountPrice(Double discountPrice) {
 		this.discountPrice = discountPrice;
 	}
 
-
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
 	}
-	
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public void setSubCategory(String subCategory) {
+		this.subCategory = subCategory;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
 }

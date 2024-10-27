@@ -47,6 +47,10 @@ public interface ProductDAO {
     // 12. Find active products by title or category with pagination
     Page<Product> findByIsActiveTrueAndTitleContainingIgnoreCaseOrCategoryContainingIgnoreCase(String ch, String ch2, Pageable pageable);
 
-	
+    // 13. Delete product from cart by product ID
+    void deleteFromCartByProductId(Integer productId);
+
+    // 14. Delete product from wishlist by product ID
+    void deleteFromWishlistByProductId(Integer productId);
 
 }

@@ -5,7 +5,7 @@
     <meta charset="ISO-8859-1">
     <title>Revshop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Internal CSS -->
@@ -128,10 +128,10 @@
                                     </a></li>
                             </c:if>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle active" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-solid fa-user"></i>
                                 </a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="userDropdown" data-bs-auto-close="outside">
                                     <c:if test="${user.role == 'ROLE_USER'}">
                                         <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
                                     </c:if>

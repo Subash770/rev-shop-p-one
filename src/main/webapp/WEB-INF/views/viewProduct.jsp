@@ -228,6 +228,9 @@
                                 </c:otherwise>
                             </c:choose>
                             <br>Category: ${product.category}<br>
+                            <br>Type: ${product.type}<br>
+                            <br>Sub-Category: ${product.subCategory}<br>
+                            <br>Size: ${product.size}<br>
                             Policy: 7 Days Replacement & Return
                         </p>
                         <div class="price-info">
