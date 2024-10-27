@@ -12,9 +12,7 @@
         /* Background styling */
         body {
             font-family: 'Arial', sans-serif;
-            background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fG9mZmljZXxlbnwwfHx8fDE2NzQ1ODU4NzU&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
+            background-color: #ffffff;
         }
 
         .overlay {
@@ -43,7 +41,7 @@
 
         .card:hover {
             box-shadow: 0 10px 18px rgba(0, 0, 0, 0.5);
-            transform: translateY(-5px); /* Smooth hover effect */
+            transform: translateY(0px); /* Smooth hover effect */
         }
 
         .card-header {

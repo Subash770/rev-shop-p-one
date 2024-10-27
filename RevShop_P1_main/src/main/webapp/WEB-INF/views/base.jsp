@@ -91,8 +91,9 @@
                         </c:when>
                         <c:otherwise>
                             <c:if test="${user.role == 'ROLE_ADMIN'}">
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin/"> Home</a></li>
-                            </c:if>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/"> Home</a></li>
+<!--added-->					
+								</c:if>
                             <c:if test="${user.role == 'ROLE_USER'}">
                                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="/"></i> Home</a></li>
                                  <li><a class="nav-link active" aria-current="page" href="/shop">Shop</a></li>
@@ -116,9 +117,7 @@
                             <li class="nav-item">
                                 <a class=" btn btn-light me-2" href="/signin">LOGIN</a>
                             </li>
-                           <!-- <li class="nav-item">
-                                <a class=" btn btn-secondary me-2" href="/register">REGISTER</a>
-                            </li>-->
+                         
                         </c:when>
                         <c:otherwise>
                             <c:if test="${user.role == 'ROLE_USER'}">
@@ -152,9 +151,7 @@
     </nav>
     <!-- End Navbar -->
 
-    <div>
-        <!-- Content to be included here -->
-    </div>
+  
 
     <!-- Start Footer -->
 

@@ -178,8 +178,8 @@
                                     <td>${u.address}, ${u.city}, ${u.state}, ${u.pincode}</td>
                                     <td>${u.isEnable}</td>
                                     <td>
-                                        <a href="${pageContext.request.contextPath}/admin/updateSts?status=true&id=${u.id}&type=${userType}" class="btn btn-sm btn-primary">Active</a>
-                                        <a href="${pageContext.request.contextPath}/admin/updateSts?status=false&id=${u.id}&type=${userType}" class="btn btn-sm btn-danger">Inactive</a>
+                                        <a href="${pageContext.request.contextPath}/admin/updateSts?status=true&id=${u.id}&type=${userType}" class="btn btn-sm btn-primary m-1">Active</a>
+                                        <a href="${pageContext.request.contextPath}/admin/updateSts?status=false&id=${u.id}&type=${userType}" class="btn btn-sm btn-danger m-1">Inactive</a>
                                     </td>
                                 </tr>
                             </c:forEach>

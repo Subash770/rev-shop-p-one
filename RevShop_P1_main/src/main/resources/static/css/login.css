@@ -12,10 +12,16 @@ body {
   padding: 100px;
   font-family: 'Arial', sans-serif;
   height: 100vh;
+  width:100vw;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aliceblue;
+  
+  background-image: url('../css/img/pexels-nurseryart-346749.jpg'); /* Replace with the actual path to your image */
+  background-size: cover; /* Scales the image to cover the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
 body::before {
@@ -33,18 +39,11 @@ body::before {
   padding: 30px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  
   background-color: #37353d;
-  opacity: 0; /* Start invisible for fade-in */
-  animation: fadeIn 0.5s forwards; /* Fade-in animation */
+  
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1; /* End state is fully visible */
-  }
-}
 
 form {
   display: flex;
@@ -150,4 +149,9 @@ button:hover {
   text-align: center;
   margin-top: 30px;
   color: #fff;
+}
+
+.image-grid{
+	margin-top: 30%;
+	padding:20px;
 }

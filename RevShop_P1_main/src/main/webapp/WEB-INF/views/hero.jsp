@@ -50,7 +50,7 @@
 		    line-height: 1.5; /* Add line height for readability */
 		    font-family: 'Arial', sans-serif; /* Change font-family */
 		}
-
+/*	marque tags features*/
 	</style>
 
   </head>
@@ -58,19 +58,20 @@
 <body class="mt-4">
 
 <!-- Carousel wrapper -->
-<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel" data-mdb-interval="3000">
+<div id="carouselBasicExample" class="carousel slide carousel-fade mt-5" data-mdb-ride="carousel" data-mdb-interval="2000">
   <!-- Indicators -->
   <div class="carousel-indicators">
     <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+	
   </div>
 
   <!-- Inner -->
   <div class="carousel-inner">
     <!-- Single item -->
     <div class="carousel-item active">
-      <img src="../css/img/hero-img1.webp" class="d-block w-100" alt="hero image1"/>
+      <img src="../css/img/slider/1.webp" class="d-block w-100" alt="hero image1"/>
       <div class="carousel-caption d-none d-md-block" id="carousel-block">
 		<h4>Limited Time Offer</h4>
 		<h2>Shop the Latest Trends</h2>
@@ -81,7 +82,7 @@
 
     <!-- Single item -->
     <div class="carousel-item">
-      <img src="../css/img/hero-img2.webp" class="d-block w-100" alt="hero image2"/>
+      <img src="../css/img/slider/2.webp" class="d-block w-100" alt="hero image2"/>
       <div class="carousel-caption d-none d-md-block" id="carousel-block">
 		<h4>New Arrivals</h4>
 		<h2>Fresh Styles</h2>
@@ -91,7 +92,7 @@
     </div>	  
     <!-- Single item -->
     <div class="carousel-item">
-      <img src="../css/img/hero-img3.webp" class="d-block w-100" alt="hero image3"/>
+      <img src="../css/img/slider/3.webp" class="d-block w-100" alt="hero image3"/>
       <div class="carousel-caption d-none d-md-block" id="carousel-block">
 		<h4>Weekend Specials</h4>
 		<h2>Exclusive Offers</h2>
@@ -100,17 +101,26 @@
       </div>
     </div>
   </div>
+ 
+		  
   <!-- Inner -->
 
+  
+  
+  
+  
+  
+  
+  
   <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+ <!-- <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
-  </button>
+  </button>-->
 </div>
 <!-- Carousel wrapper -->
 
@@ -130,26 +140,4 @@
 </html>
 
 
-<section id="feature" class="section-p1">
-    <div class="fe-box">
-        <img src="../css/img/f1.jpg" alt="">
-        <h6>Free Shipping</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../css/img/f2.jpg" alt="">
-        <h6>Online Order</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../css/img/f3.jpg" alt="">
-        <h6>Save Money</h6>
-    </div>
-   
-    <div class="fe-box">
-        <img src="../css/img/f4.jpg" alt="">
-        <h6>Great Offers</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../css/img/f5.jpg" alt="">
-        <h6>24/7 Support</h6>
-    </div>
-</section>
+<%@ include file="./marque.jsp" %>

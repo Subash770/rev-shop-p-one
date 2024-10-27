@@ -9,56 +9,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
+	
+	<style>
+		.welcome-header {
+		    font-size: 2.5rem; /* Increase font size */
+		    font-weight: bold; /* Make the text bold */
+		    text-align: center; /* Center the text */
+		    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+		
+		}
+
+	</style>
 </head>
 <body>
-    <div class="wrapper">
-        <form action="${pageContext.request.contextPath}/login" method="post" onsubmit="return validateForm()">
-            <h2>Login</h2>
+	<div class="container p-5 ">
+	    <div class="row">
+			
+	        <!-- Column 1: Image -->
+	        <div class="col-6">
+	            <div class="image-grid pl-5 pt-5 ">
+	            
+					<h2 class="welcome-header  p-5 mt-3"></h2>
 
-            <!-- Error Message -->
-            <c:if test="${param.error != null}">
-                <div class="alert alert-danger">
-                    <h5 style="color:red;"><c:out value="${sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}" /></h5>
-                </div>
-            </c:if>
+	            </div>
+	        </div>
 
-            <!-- Success Message -->
-            <c:if test="${param.logout != null}">
-                <div class="alert alert-success">
-                    Logout successful!
-                </div>
-            </c:if>
+	        <!-- Column 2: Login Form -->
+	        <div class="col-6">
+	            <div class="wrapper p-5 ">
+	                <form action="${pageContext.request.contextPath}/login" method="post" onsubmit="return validateForm()">
+	                    <h2>Login</h2>
 
-            <!-- Email Field -->
-            <div class="input-field">
-                <input id="email" placeholder="Enter your Email" type="email" name="username" required>
-                <label for="email"></label>
-            </div>
+	                    <!-- Error Message -->
+	                    <c:if test="${param.error != null}">
+	                        <div class="alert alert-danger">
+	                            <h5 style="color:red;"><c:out value="${sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}" /></h5>
+	                        </div>
+	                    </c:if>
 
-            <!-- Password Field -->
-            <div class="input-field">
-                <input id="password" placeholder="Enter your Password" type="password" name="password" required>
-                <label for="password"></label>
-            </div>
+	                    <!-- Success Message -->
+	                    <c:if test="${param.logout != null}">
+	                        <div class="alert alert-success">
+	                            Logout successful!
+	                        </div>
+	                    </c:if>
 
-            <!-- Remember Me and Forgot Password -->
-            <div class="forget">
-                <label for="remember">
-                    <input type="checkbox" id="remember" name="remember">
-                    <p>Remember me</p>
-                </label>
-                <a href="${pageContext.request.contextPath}/forgot-password" class="forgot-password">Forgot password?</a>
-            </div>
+	                    <!-- Email Field -->
+	                    <div class="input-field">
+	                        <input id="email" placeholder="Enter Email" type="email" name="username" required>
+	                        <label for="email"></label>
+	                    </div>
 
-            <!-- Submit Button -->
-            <button type="submit" class="button">Sign In</button>
+	                    <!-- Password Field -->
+	                    <div class="input-field">
+	                        <input id="password" placeholder="Enter your Password" type="password" name="password" required>
+	                        <label for="password"></label>
+	                    </div>
 
-            <!-- Registration Link -->
-            <div class="register">
-                <p>Don't have an account? <a href="${pageContext.request.contextPath}/register">Sign Up</a></p>
-            </div>
-        </form>
-    </div>
+	                    <!-- Remember Me and Forgot Password -->
+	                    <div class="forget">
+	                        <label for="remember">
+	                            <input type="checkbox" id="remember" name="remember">
+	                            <p>Remember me</p>
+	                        </label>
+	                        <a href="${pageContext.request.contextPath}/forgot-password" class="forgot-password">Forgot password?</a>
+	                    </div>
+
+	                    <!-- Submit Button -->
+	                    <button type="submit" class="button">Sign In</button>
+
+	                    <!-- Registration Link -->
+	                    <div class="register">
+	                        <p>Don't have an account? <a href="${pageContext.request.contextPath}/register">Sign Up</a></p>
+	                    </div>
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	
 
     <script>
         function validateForm() {
